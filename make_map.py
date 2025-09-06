@@ -39,7 +39,7 @@ folium.TileLayer(
 ).add_to(m)
 
 # 9. Añadir marcadores de paradas de autobús al mapa utilizando un plugin MarkerCluster
-marker_cluster = MarkerCluster(name="Bus Stops (Cluster)").add_to(m)
+marker_cluster = MarkerCluster(name="Farmacias (Cluster)").add_to(m)
 for _, row in gdf.iterrows():
     coords = row.geometry
     if coords.geom_type == "Point":
@@ -51,7 +51,7 @@ for _, row in gdf.iterrows():
 # 10. Añadir una capa GeoJSON simple con marcadores circulares interactivos
 interactive_layer = folium.GeoJson(
     gdf,
-    name="Bus Stops (Points)", show=False,
+    name="Farmacias (Puntos)", show=False,
     marker=folium.CircleMarker(
         radius=5, color="blue", fill=True, fill_opacity=0.7
     ),
